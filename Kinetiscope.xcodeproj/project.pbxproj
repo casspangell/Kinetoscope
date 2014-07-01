@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89DA8D1E1963219100EB10C4 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA8D1D1963219100EB10C4 /* Block.m */; };
+		89E829651963143A002982D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829641963143A002982D6 /* Foundation.framework */; };
+		89E829671963143A002982D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829661963143A002982D6 /* CoreGraphics.framework */; };
+		89E829691963143A002982D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829681963143A002982D6 /* UIKit.framework */; };
+		89E8296F1963143A002982D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89E8296D1963143A002982D6 /* InfoPlist.strings */; };
+		89E829711963143A002982D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E829701963143A002982D6 /* main.m */; };
+		89E829751963143A002982D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E829741963143A002982D6 /* AppDelegate.m */; };
+		89E829781963143A002982D6 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E829761963143A002982D6 /* Main_iPhone.storyboard */; };
+		89E8297B1963143A002982D6 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E829791963143A002982D6 /* Main_iPad.storyboard */; };
+		89E8297E1963143A002982D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E8297D1963143A002982D6 /* ViewController.m */; };
+		89E829801963143A002982D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89E8297F1963143A002982D6 /* Images.xcassets */; };
+		89E829871963143A002982D6 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829861963143A002982D6 /* XCTest.framework */; };
+		89E829881963143A002982D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829641963143A002982D6 /* Foundation.framework */; };
+		89E829891963143A002982D6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829681963143A002982D6 /* UIKit.framework */; };
+		89E829911963143A002982D6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89E8298F1963143A002982D6 /* InfoPlist.strings */; };
+		89E829931963143A002982D6 /* KinetiscopeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E829921963143A002982D6 /* KinetiscopeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89E8298A1963143A002982D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89E829591963143A002982D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89E829601963143A002982D6;
+			remoteInfo = Kinetiscope;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89DA8D1C1963219100EB10C4 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		89DA8D1D1963219100EB10C4 /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
+		89E829611963143A002982D6 /* Kinetiscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinetiscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E829641963143A002982D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		89E829661963143A002982D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		89E829681963143A002982D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		89E8296C1963143A002982D6 /* Kinetiscope-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kinetiscope-Info.plist"; sourceTree = "<group>"; };
+		89E8296E1963143A002982D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		89E829701963143A002982D6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		89E829721963143A002982D6 /* Kinetiscope-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kinetiscope-Prefix.pch"; sourceTree = "<group>"; };
+		89E829731963143A002982D6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		89E829741963143A002982D6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		89E829771963143A002982D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		89E8297A1963143A002982D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		89E8297C1963143A002982D6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		89E8297D1963143A002982D6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		89E8297F1963143A002982D6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		89E829851963143A002982D6 /* KinetiscopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KinetiscopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E829861963143A002982D6 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		89E8298E1963143A002982D6 /* KinetiscopeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KinetiscopeTests-Info.plist"; sourceTree = "<group>"; };
+		89E829901963143A002982D6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		89E829921963143A002982D6 /* KinetiscopeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KinetiscopeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89E8295E1963143A002982D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E829671963143A002982D6 /* CoreGraphics.framework in Frameworks */,
+				89E829691963143A002982D6 /* UIKit.framework in Frameworks */,
+				89E829651963143A002982D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89E829821963143A002982D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E829871963143A002982D6 /* XCTest.framework in Frameworks */,
+				89E829891963143A002982D6 /* UIKit.framework in Frameworks */,
+				89E829881963143A002982D6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89E829581963143A002982D6 = {
+			isa = PBXGroup;
+			children = (
+				89E8296A1963143A002982D6 /* Kinetiscope */,
+				89E8298C1963143A002982D6 /* KinetiscopeTests */,
+				89E829631963143A002982D6 /* Frameworks */,
+				89E829621963143A002982D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89E829621963143A002982D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89E829611963143A002982D6 /* Kinetiscope.app */,
+				89E829851963143A002982D6 /* KinetiscopeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89E829631963143A002982D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89E829641963143A002982D6 /* Foundation.framework */,
+				89E829661963143A002982D6 /* CoreGraphics.framework */,
+				89E829681963143A002982D6 /* UIKit.framework */,
+				89E829861963143A002982D6 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89E8296A1963143A002982D6 /* Kinetiscope */ = {
+			isa = PBXGroup;
+			children = (
+				89E829731963143A002982D6 /* AppDelegate.h */,
+				89E829741963143A002982D6 /* AppDelegate.m */,
+				89E829761963143A002982D6 /* Main_iPhone.storyboard */,
+				89E829791963143A002982D6 /* Main_iPad.storyboard */,
+				89E8297C1963143A002982D6 /* ViewController.h */,
+				89E8297D1963143A002982D6 /* ViewController.m */,
+				89DA8D1C1963219100EB10C4 /* Block.h */,
+				89DA8D1D1963219100EB10C4 /* Block.m */,
+				89E8297F1963143A002982D6 /* Images.xcassets */,
+				89E8296B1963143A002982D6 /* Supporting Files */,
+			);
+			path = Kinetiscope;
+			sourceTree = "<group>";
+		};
+		89E8296B1963143A002982D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89E8296C1963143A002982D6 /* Kinetiscope-Info.plist */,
+				89E8296D1963143A002982D6 /* InfoPlist.strings */,
+				89E829701963143A002982D6 /* main.m */,
+				89E829721963143A002982D6 /* Kinetiscope-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89E8298C1963143A002982D6 /* KinetiscopeTests */ = {
+			isa = PBXGroup;
+			children = (
+				89E829921963143A002982D6 /* KinetiscopeTests.m */,
+				89E8298D1963143A002982D6 /* Supporting Files */,
+			);
+			path = KinetiscopeTests;
+			sourceTree = "<group>";
+		};
+		89E8298D1963143A002982D6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				89E8298E1963143A002982D6 /* KinetiscopeTests-Info.plist */,
+				89E8298F1963143A002982D6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89E829601963143A002982D6 /* Kinetiscope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89E829961963143A002982D6 /* Build configuration list for PBXNativeTarget "Kinetiscope" */;
+			buildPhases = (
+				89E8295D1963143A002982D6 /* Sources */,
+				89E8295E1963143A002982D6 /* Frameworks */,
+				89E8295F1963143A002982D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kinetiscope;
+			productName = Kinetiscope;
+			productReference = 89E829611963143A002982D6 /* Kinetiscope.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89E829841963143A002982D6 /* KinetiscopeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89E829991963143A002982D6 /* Build configuration list for PBXNativeTarget "KinetiscopeTests" */;
+			buildPhases = (
+				89E829811963143A002982D6 /* Sources */,
+				89E829821963143A002982D6 /* Frameworks */,
+				89E829831963143A002982D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89E8298B1963143A002982D6 /* PBXTargetDependency */,
+			);
+			name = KinetiscopeTests;
+			productName = KinetiscopeTests;
+			productReference = 89E829851963143A002982D6 /* KinetiscopeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89E829591963143A002982D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = mondolabs;
+				TargetAttributes = {
+					89E829601963143A002982D6 = {
+						DevelopmentTeam = 8DH4YXH58S;
+					};
+					89E829841963143A002982D6 = {
+						TestTargetID = 89E829601963143A002982D6;
+					};
+				};
+			};
+			buildConfigurationList = 89E8295C1963143A002982D6 /* Build configuration list for PBXProject "Kinetiscope" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89E829581963143A002982D6;
+			productRefGroup = 89E829621963143A002982D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89E829601963143A002982D6 /* Kinetiscope */,
+				89E829841963143A002982D6 /* KinetiscopeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89E8295F1963143A002982D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E8297B1963143A002982D6 /* Main_iPad.storyboard in Resources */,
+				89E829801963143A002982D6 /* Images.xcassets in Resources */,
+				89E829781963143A002982D6 /* Main_iPhone.storyboard in Resources */,
+				89E8296F1963143A002982D6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89E829831963143A002982D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E829911963143A002982D6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89E8295D1963143A002982D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E8297E1963143A002982D6 /* ViewController.m in Sources */,
+				89DA8D1E1963219100EB10C4 /* Block.m in Sources */,
+				89E829751963143A002982D6 /* AppDelegate.m in Sources */,
+				89E829711963143A002982D6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89E829811963143A002982D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89E829931963143A002982D6 /* KinetiscopeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89E8298B1963143A002982D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89E829601963143A002982D6 /* Kinetiscope */;
+			targetProxy = 89E8298A1963143A002982D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89E8296D1963143A002982D6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E8296E1963143A002982D6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		89E829761963143A002982D6 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E829771963143A002982D6 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		89E829791963143A002982D6 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E8297A1963143A002982D6 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		89E8298F1963143A002982D6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89E829901963143A002982D6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89E829941963143A002982D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89E829951963143A002982D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89E829971963143A002982D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
+				INFOPLIST_FILE = "Kinetiscope/Kinetiscope-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		89E829981963143A002982D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
+				INFOPLIST_FILE = "Kinetiscope/Kinetiscope-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		89E8299A1963143A002982D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Kinetiscope.app/Kinetiscope";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KinetiscopeTests/KinetiscopeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		89E8299B1963143A002982D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Kinetiscope.app/Kinetiscope";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
+				INFOPLIST_FILE = "KinetiscopeTests/KinetiscopeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89E8295C1963143A002982D6 /* Build configuration list for PBXProject "Kinetiscope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89E829941963143A002982D6 /* Debug */,
+				89E829951963143A002982D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89E829961963143A002982D6 /* Build configuration list for PBXNativeTarget "Kinetiscope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89E829971963143A002982D6 /* Debug */,
+				89E829981963143A002982D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89E829991963143A002982D6 /* Build configuration list for PBXNativeTarget "KinetiscopeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89E8299A1963143A002982D6 /* Debug */,
+				89E8299B1963143A002982D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89E829591963143A002982D6 /* Project object */;
+}
