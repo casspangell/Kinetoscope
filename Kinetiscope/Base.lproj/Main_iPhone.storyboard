@@ -26,10 +26,21 @@
                                     <action selector="recordButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pTV-2r-7rH"/>
                                 </connections>
                             </button>
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLA-nc-tul">
+                                <rect key="frame" x="141" y="474" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Block">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="newBlock:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aea-Hy-nVV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="blockButton" destination="yLA-nc-tul" id="DEf-BP-mL3"/>
                         <outlet property="recordButton" destination="UFw-00-375" id="xE3-vl-CsD"/>
                     </connections>
                 </viewController>

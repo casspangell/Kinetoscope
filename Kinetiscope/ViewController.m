@@ -21,6 +21,53 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     blockArray = [[NSMutableArray alloc] init];
+}
+
+#pragma mark - Methods
+-(void)createNewBlock{
+    
+    Block *newBlock = [[Block alloc] init];
+    [blockArray addObject:newBlock];
+    NSLog(@"ar:%@", blockArray);
+    
+    CGFloat blockAndBuffer = newBlock.getWidth + 5;
+    CGFloat sideBuffer = 5;
+    CGFloat topBuffer = 20;
+    int blockRow = 0;
+    int blockCol = 0;
+    
+    for(int i=0; i<[blockArray count]; i++){
+        
+        newBlock.frame = CGRectMake(sideBuffer + (i * blockAndBuffer), topBuffer, newBlock.getWidth, newBlock.getHeight);
+
+       /* if ((i % 3 == 0) && i != 0) {
+            topBuffer = topBuffer + newBlock.getHeight + sideBuffer;
+            newBlock.frame = CGRectMake(sideBuffer, topBuffer, newBlock.getWidth, newBlock.getHeight);
+            newBlock.backgroundColor = [UIColor blackColor];
+        }*/
+        
+        if (i == 3) {
+            blockRow = 1;
+            newBlock.frame = CGRectMake(sideBuffer, topBuffer + blockRow * (newBlock.getHeight + sideBuffer), newBlock.getWidth, newBlock.getHeight);
+        }
+        if (i == 4) {
+             newBlock.frame = CGRectMake(sideBuffer + newBlock.getWidth + sideBuffer, topBuffer + newBlock.getHeight + sideBuffer, newBlock.getWidth, newBlock.getHeight);
+        }
+        if (i == 5) {
+            newBlock.frame = CGRectMake(sideBuffer + newBlock.getWidth + sideBuffer + newBlock.getWidth + sideBuffer, topBuffer + newBlock.getHeight + sideBuffer, newBlock.getWidth, newBlock.getHeight);
+        }
+        
+        [self.view addSubview:newBlock];
+        
+    }
+    
+    
+    
+}
+
+#pragma mark - Button Methods
+-(IBAction)newBlock:(id)sender{
+ 
     [self createNewBlock];
 }
 
@@ -86,19 +133,11 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Video Saved" message:@"Saved To Photo Album"
                                                        delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        [self createNewBlock];
+       // [self createNewBlock];
     }
 }
 
-#pragma mark - Methods
--(void)createNewBlock{
 
-    Block *newBlock = [[Block alloc] init];
-    newBlock.frame = CGRectMake(50.0, 50.0, 50.0, 50.0);
-    
-    [self.view addSubview:newBlock];
-    
-}
 
 - (void)didReceiveMemoryWarning
 {

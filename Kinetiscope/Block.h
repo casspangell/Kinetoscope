@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Block : UIButton {
-    
-}
+@interface Block : UIButton 
 
-
-
+-(CGFloat)getWidth;
+-(CGFloat)getHeight;
 @end

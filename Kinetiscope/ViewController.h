@@ -22,5 +22,6 @@
 -(void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void*)contextInfo;
 
 @property(nonatomic) IBOutlet UIButton *recordButton;
+@property(nonatomic) IBOutlet UIButton *blockButton;
 
 @end

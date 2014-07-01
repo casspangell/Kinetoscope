@@ -16,10 +16,19 @@
     if (self) {
     
         self.backgroundColor = [UIColor redColor];
-        
+        self.frame = CGRectMake(0, 0, 100, 100);
         
     }
     return self;
 }
+
+-(CGFloat)getWidth {
+    return self.frame.size.width;
+}
+
+-(CGFloat)getHeight {
+    return self.frame.size.height;
+}
+
 
 @end
