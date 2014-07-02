@@ -35,18 +35,16 @@
     
     Block *newBlock = [[Block alloc] init];
     [blockArray addObject:newBlock];
+    [newBlock setBlockNumber:[blockArray count]-1];
 
-    CGFloat sideBuffer = 5;
+    /*CGFloat sideBuffer = 5;
     CGFloat blockAndBuffer = newBlock.getWidth + sideBuffer;
     CGFloat topBuffer = 20;
     int blockRow = 0;
     int rowCount = 0;
-    
+
     for(int i=0; i<[blockArray count]; i++){
-        
-        [newBlock setBlockNumber:i];
-        
-        
+
        if (i == 0) {
             //do nothing
         }else if (i % 3 == 0) {
@@ -61,16 +59,51 @@
         
         self.blockView.frame = CGRectMake(0, 0, 320, (topBuffer + ((blockRow+1) * (newBlock.getHeight + sideBuffer))));
         [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];
-        
-        //NSLog(@"%@", NSStringFromCGRect(self.blockView.frame));
-        //NSLog(@"-- %@", NSStringFromCGRect(newBlock.frame));
-        self.blockView.backgroundColor = [UIColor blackColor];
-        [self.blockView addSubview:newBlock];
-        
-        //NSLog(@"blockArr %@", blockArray);
-        
-    }
 
+        [self.blockView addSubview:newBlock];
+    }*/
+    
+    [self reverseBlocks];
+
+}
+
+-(void)reverseBlocks{
+    Block *block = [[Block alloc] init];
+   // NSLog(@"%d",[blockArray count]);
+    /*for (int i=[blockArray count]; i>0; i--) {
+        block = [blockArray objectAtIndex:i-1];
+        NSLog(@"%@, %d",block, [block getBlockNumber]);
+    }*/
+    
+    CGFloat sideBuffer = 5;
+    CGFloat blockAndBuffer = block.getWidth + sideBuffer;
+    CGFloat topBuffer = 20;
+    int blockRow = 0;
+    int rowCount = 0;
+    
+    //for(int i=0; i<[blockArray count]; i++){
+    for (int i = [blockArray count]; i>0; i--) {
+        block = [blockArray objectAtIndex:i-1];
+        
+       if (i == [blockArray count]) {
+            //do nothing
+        }else if (i % 3 == 0) {
+            rowCount = 0;
+            blockRow ++;
+        }else{
+            rowCount ++;
+        }
+
+        //NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
+        block.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (block.getHeight + sideBuffer)), block.getWidth, block.getHeight);
+        [block setTitle:[NSString stringWithFormat:@"%d", [block getBlockNumber]] forState:(UIControlState)UIControlStateNormal];
+        
+        self.blockView.frame = CGRectMake(0, 0, 320, (topBuffer + ((blockRow+1) * (block.getHeight + sideBuffer))));
+        [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];
+        
+        [self.blockView addSubview:block];
+    }
+    
 }
 
 #pragma mark - Gesture Recognizers
