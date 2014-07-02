@@ -28,7 +28,7 @@
     
     Block *newBlock = [[Block alloc] init];
     [blockArray addObject:newBlock];
-    NSLog(@"ar:%@", blockArray);
+
     
     CGFloat sideBuffer = 5;
     CGFloat blockAndBuffer = newBlock.getWidth + sideBuffer;
@@ -38,16 +38,24 @@
     int rowCount = 0;
     
     for(int i=0; i<[blockArray count]; i++){
-        
-        newBlock.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (newBlock.getHeight + sideBuffer)), newBlock.getWidth, newBlock.getHeight);
-
-        if ((i % 3 == 0) && i != 0) {
+        if (i == 0) {
+            //leave blank
+        }else if (i == 3 || i == 6 || i == 9) {
             rowCount = 0;
             blockRow ++;
         }else{
             rowCount ++;
         }
+        NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
+        newBlock.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (newBlock.getHeight + sideBuffer)), newBlock.getWidth, newBlock.getHeight);
         
+//        if ((i % 3 == 0) && i != 0) {
+//            rowCount = 0;
+//            blockRow ++;
+//        }else{
+//            rowCount ++;
+//        }
+           //NSLog(@"ar:%@", blockArray);
         [self.view addSubview:newBlock];
         
     }
@@ -124,7 +132,7 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Video Saved" message:@"Saved To Photo Album"
                                                        delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-       // [self createNewBlock];
+       [self createNewBlock];
     }
 }
 
