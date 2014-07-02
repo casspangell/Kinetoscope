@@ -8,8 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Block : UIButton 
+@interface Block : UIButton {
+    double blockNumber;
+    UIView *blockStringView;
+}
+
+@property(nonatomic) NSString *blockLabel;
 
 -(CGFloat)getWidth;
 -(CGFloat)getHeight;
+
+-(void)setBlockNumber:(int)blockNum;
+-(int)getBlockNumber;
 @end

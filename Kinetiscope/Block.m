@@ -14,11 +14,12 @@
 {
     self = [super init];
     if (self) {
-    
+        NSLog(@"blocknum %d", [self getBlockNumber]);
         self.backgroundColor = [UIColor redColor];
         self.frame = CGRectMake(0, 0, 100, 100);
         
     }
+    
     return self;
 }
 
@@ -28,6 +29,15 @@
 
 -(CGFloat)getHeight {
     return self.frame.size.height;
+}
+
+-(void)setBlockNumber:(int)blockNum {
+    blockNumber = blockNum;
+    NSLog(@"setblockNumber %f", blockNumber);
+}
+
+-(int)getBlockNumber {
+    return blockNumber;
 }
 
 
