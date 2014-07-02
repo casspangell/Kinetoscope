@@ -21,6 +21,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     blockArray = [[NSMutableArray alloc] init];
+    
+    UISwipeGestureRecognizer* swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
+    swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:swipeLeftGestureRecognizer];
 }
 
 #pragma mark - Methods
@@ -29,7 +33,6 @@
     Block *newBlock = [[Block alloc] init];
     [blockArray addObject:newBlock];
 
-    
     CGFloat sideBuffer = 5;
     CGFloat blockAndBuffer = newBlock.getWidth + sideBuffer;
     CGFloat topBuffer = 20;
@@ -52,9 +55,12 @@
         [self.view addSubview:newBlock];
         
     }
-    
-    
-    
+
+}
+
+#pragma mark - Gesture Recognizers
+- (void)handleSwipeLeft:(UIGestureRecognizer*)recognizer {
+    NSLog(@"swipe!");
 }
 
 #pragma mark - Button Methods
