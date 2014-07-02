@@ -34,28 +34,21 @@
     CGFloat blockAndBuffer = newBlock.getWidth + sideBuffer;
     CGFloat topBuffer = 20;
     int blockRow = 0;
-    int blockCol = 0;
     int rowCount = 0;
     
     for(int i=0; i<[blockArray count]; i++){
-        if (i == 0) {
-            //leave blank
-        }else if (i == 3 || i == 6 || i == 9) {
+
+       if (i == 0) {
+            //do nothing
+        }else if (i % 3 == 0) {
             rowCount = 0;
             blockRow ++;
         }else{
             rowCount ++;
         }
-        NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
+        //NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
         newBlock.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (newBlock.getHeight + sideBuffer)), newBlock.getWidth, newBlock.getHeight);
         
-//        if ((i % 3 == 0) && i != 0) {
-//            rowCount = 0;
-//            blockRow ++;
-//        }else{
-//            rowCount ++;
-//        }
-           //NSLog(@"ar:%@", blockArray);
         [self.view addSubview:newBlock];
         
     }
