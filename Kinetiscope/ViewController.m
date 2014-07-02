@@ -52,13 +52,14 @@
         }else{
             rowCount ++;
         }
-        //NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
+        NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
         newBlock.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (newBlock.getHeight + sideBuffer)), newBlock.getWidth, newBlock.getHeight);
         
-        self.blockView.frame = CGRectMake(0, topBuffer, 320, (topBuffer + ((blockRow+1) * (newBlock.getHeight + sideBuffer))));
+        self.blockView.frame = CGRectMake(0, 0, 320, (topBuffer + ((blockRow+1) * (newBlock.getHeight + sideBuffer))));
         [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];
         
         NSLog(@"%@", NSStringFromCGRect(self.blockView.frame));
+        NSLog(@"-- %@", NSStringFromCGRect(newBlock.frame));
         self.blockView.backgroundColor = [UIColor blackColor];
         [self.blockView addSubview:newBlock];
         
