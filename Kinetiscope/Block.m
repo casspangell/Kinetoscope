@@ -18,11 +18,14 @@
         self.backgroundColor = [UIColor redColor];
         self.frame = CGRectMake(0, 0, 100, 100);
         
+
     }
     
     return self;
 }
 
+
+#pragma mark - Getters / Setters
 -(CGFloat)getWidth {
     return self.frame.size.width;
 }
@@ -37,6 +40,14 @@
 
 -(int)getBlockNumber {
     return blockNumber;
+}
+
+-(void)setBlockMoviePath:(NSString*)mPath{
+    blockMoviePath = mPath;
+}
+
+-(NSString*)getBlockMoviePath{
+    return blockMoviePath;
 }
 
 

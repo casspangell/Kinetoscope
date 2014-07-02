@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Block : UIButton {
+@interface Block : UIButton <UIImagePickerControllerDelegate>{
     double blockNumber;
     UIView *blockStringView;
+    NSString *blockMoviePath;
 }
 
 @property(nonatomic) NSString *blockLabel;
@@ -20,4 +21,7 @@
 
 -(void)setBlockNumber:(int)blockNum;
 -(int)getBlockNumber;
+
+-(void)setBlockMoviePath:(NSString*)mPath;
+-(NSString*)getBlockMoviePath;
 @end

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89DA11161964B744006BBCA4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 89DA11151964B744006BBCA4 /* video.mp4 */; };
 		89DA8D1E1963219100EB10C4 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA8D1D1963219100EB10C4 /* Block.m */; };
 		89E829651963143A002982D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829641963143A002982D6 /* Foundation.framework */; };
 		89E829671963143A002982D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829661963143A002982D6 /* CoreGraphics.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89DA11151964B744006BBCA4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		89DA8D1C1963219100EB10C4 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		89DA8D1D1963219100EB10C4 /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		89E829611963143A002982D6 /* Kinetiscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinetiscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 		89E8296A1963143A002982D6 /* Kinetiscope */ = {
 			isa = PBXGroup;
 			children = (
+				89DA11151964B744006BBCA4 /* video.mp4 */,
 				89E829731963143A002982D6 /* AppDelegate.h */,
 				89E829741963143A002982D6 /* AppDelegate.m */,
 				89E829761963143A002982D6 /* Main_iPhone.storyboard */,
@@ -241,6 +244,7 @@
 			files = (
 				89E8297B1963143A002982D6 /* Main_iPad.storyboard in Resources */,
 				89E829801963143A002982D6 /* Images.xcassets in Resources */,
+				89DA11161964B744006BBCA4 /* video.mp4 in Resources */,
 				89E829781963143A002982D6 /* Main_iPhone.storyboard in Resources */,
 				89E8296F1963143A002982D6 /* InfoPlist.strings in Resources */,
 			);

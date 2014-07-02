@@ -34,54 +34,52 @@
 -(void)createNewBlock{
     
     Block *newBlock = [[Block alloc] init];
+    [newBlock setBlockNumber:[blockArray count]];
+    [newBlock setBlockMoviePath:bMoviePath];
+    [newBlock addTarget:self action:@selector(blockPressed) forControlEvents:UIControlEventTouchUpInside];
     [blockArray addObject:newBlock];
-    [newBlock setBlockNumber:[blockArray count]-1];
 
-    /*CGFloat sideBuffer = 5;
-    CGFloat blockAndBuffer = newBlock.getWidth + sideBuffer;
-    CGFloat topBuffer = 20;
-    int blockRow = 0;
-    int rowCount = 0;
-
-    for(int i=0; i<[blockArray count]; i++){
-
-       if (i == 0) {
-            //do nothing
-        }else if (i % 3 == 0) {
-            rowCount = 0;
-            blockRow ++;
-        }else{
-            rowCount ++;
-        }
-        //NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
-        newBlock.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (newBlock.getHeight + sideBuffer)), newBlock.getWidth, newBlock.getHeight);
-        [newBlock setTitle:[NSString stringWithFormat:@"%d", [newBlock getBlockNumber]] forState:(UIControlState)UIControlStateNormal];
-        
-        self.blockView.frame = CGRectMake(0, 0, 320, (topBuffer + ((blockRow+1) * (newBlock.getHeight + sideBuffer))));
-        [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];
-
-        [self.blockView addSubview:newBlock];
-    }*/
-    
     [self reverseBlocks];
+}
 
+-(void)blockPressed {
+    NSLog(@"HIT!");
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
+    NSURL *streamURL = [NSURL fileURLWithPath:path];
+    movieplayer =[[MPMoviePlayerController alloc] initWithContentURL:streamURL];
+    [movieplayer prepareToPlay];
+    [movieplayer.view setFrame: self.view.bounds];
+    [self.view addSubview: movieplayer.view];
+    movieplayer.fullscreen = YES;
+    movieplayer.shouldAutoplay = YES;
+    movieplayer.repeatMode = MPMovieRepeatModeNone;
+    movieplayer.movieSourceType = MPMovieSourceTypeFile;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMoviePlayerDidExitFullscreen:) name:MPMoviePlayerDidExitFullscreenNotification object:nil];
+    
+    [movieplayer play];
+    
+}
+
+- (void)MPMoviePlayerDidExitFullscreen:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:MPMoviePlayerDidExitFullscreenNotification
+                                                  object:nil];
+    
+    [movieplayer stop];
+    [movieplayer.view removeFromSuperview];
 }
 
 -(void)reverseBlocks{
     Block *block = [[Block alloc] init];
-   // NSLog(@"%d",[blockArray count]);
-    /*for (int i=[blockArray count]; i>0; i--) {
-        block = [blockArray objectAtIndex:i-1];
-        NSLog(@"%@, %d",block, [block getBlockNumber]);
-    }*/
-    
+
     CGFloat sideBuffer = 5;
     CGFloat blockAndBuffer = block.getWidth + sideBuffer;
     CGFloat topBuffer = 20;
     int blockRow = 0;
     int rowCount = 0;
     
-    //for(int i=0; i<[blockArray count]; i++){
     for (int i = [blockArray count]; i>0; i--) {
         block = [blockArray objectAtIndex:i-1];
         
@@ -94,7 +92,6 @@
             rowCount ++;
         }
 
-        //NSLog(@"sidebuffer: %f rowCount: %d blockRow: %d blockAndBuffer: %f topBuffer: %f", sideBuffer, rowCount, blockRow, blockAndBuffer, topBuffer);
         block.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (block.getHeight + sideBuffer)), block.getWidth, block.getHeight);
         [block setTitle:[NSString stringWithFormat:@"%d", [block getBlockNumber]] forState:(UIControlState)UIControlStateNormal];
         
@@ -114,7 +111,6 @@
 
 #pragma mark - Button Methods
 -(IBAction)newBlock:(id)sender{
- 
     [self createNewBlock];
 }
 
@@ -164,7 +160,7 @@
         // default method provided by the SDK to save videos to the Photos Album. As parameters, you pass both the path to the video to be saved, as well as a callback method that will inform you of the status of the save operation.
         if(UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath)){
             NSLog(@"%@", moviePath);
-
+            bMoviePath = moviePath;
             UISaveVideoAtPathToSavedPhotosAlbum(moviePath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
         }
     }

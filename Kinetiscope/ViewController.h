@@ -10,9 +10,12 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ViewController : UIViewController <UIScrollViewDelegate>{
     NSMutableArray *blockArray;
+    NSString *bMoviePath;
+    MPMoviePlayerController *movieplayer;
 }
 
 -(BOOL)startCameraControllerFromViewController:(UIViewController*)controller
