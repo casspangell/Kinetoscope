@@ -16,6 +16,7 @@
 		89DA11631965F875006BBCA4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11621965F875006BBCA4 /* Security.framework */; };
 		89DA11651965F87B006BBCA4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11641965F87B006BBCA4 /* Social.framework */; };
 		89DA11671965F883006BBCA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11661965F883006BBCA4 /* SystemConfiguration.framework */; };
+		89DA116A1965FB50006BBCA4 /* BlockObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA11691965FB50006BBCA4 /* BlockObj.m */; };
 		89DA8D1E1963219100EB10C4 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA8D1D1963219100EB10C4 /* Block.m */; };
 		89E829651963143A002982D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829641963143A002982D6 /* Foundation.framework */; };
 		89E829671963143A002982D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829661963143A002982D6 /* CoreGraphics.framework */; };
@@ -54,6 +55,8 @@
 		89DA11621965F875006BBCA4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		89DA11641965F87B006BBCA4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		89DA11661965F883006BBCA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		89DA11681965FB50006BBCA4 /* BlockObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockObj.h; sourceTree = "<group>"; };
+		89DA11691965FB50006BBCA4 /* BlockObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockObj.m; sourceTree = "<group>"; };
 		89DA8D1C1963219100EB10C4 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		89DA8D1D1963219100EB10C4 /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		89E829611963143A002982D6 /* Kinetiscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinetiscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +163,8 @@
 				89E8297D1963143A002982D6 /* ViewController.m */,
 				89DA8D1C1963219100EB10C4 /* Block.h */,
 				89DA8D1D1963219100EB10C4 /* Block.m */,
+				89DA11681965FB50006BBCA4 /* BlockObj.h */,
+				89DA11691965FB50006BBCA4 /* BlockObj.m */,
 				89E8297F1963143A002982D6 /* Images.xcassets */,
 				89E8296B1963143A002982D6 /* Supporting Files */,
 			);
@@ -299,6 +304,7 @@
 			files = (
 				89E8297E1963143A002982D6 /* ViewController.m in Sources */,
 				89DA8D1E1963219100EB10C4 /* Block.m in Sources */,
+				89DA116A1965FB50006BBCA4 /* BlockObj.m in Sources */,
 				89E829751963143A002982D6 /* AppDelegate.m in Sources */,
 				89E829711963143A002982D6 /* main.m in Sources */,
 			);

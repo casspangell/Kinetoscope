@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Block.h"
+#import "BlockObj.h"
 
 @interface ViewController ()
 
@@ -40,7 +41,8 @@
     [newBlock setBlockMoviePath:bMoviePath];
     [newBlock addTarget:self action:@selector(blockPressed:) forControlEvents:UIControlEventTouchUpInside];
     [blockArray addObject:newBlock];
-
+    
+    [self saveBlockToKinvey:newBlock];
     [self reverseBlocks];
 }
 
@@ -202,6 +204,32 @@
             [alert show];
         }
     }];
+}
+
+-(void)saveBlockToKinvey:(Block*)block{
+
+    KCSCollection* collection = [KCSCollection collectionFromString:@"Blocks" ofClass:[BlockObj class]];
+    KCSAppdataStore *store = [KCSAppdataStore storeWithCollection:collection options:nil];
+    
+    BlockObj* blockobj = [[BlockObj alloc] init];
+    blockobj.userId = [KCSUser activeUser].userId;
+    blockobj.name = @"Launch Party";
+    blockobj.date = [NSDate dateWithTimeIntervalSince1970:1352149171]; //sample date
+    
+    [store saveObject:blockobj withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
+        if (errorOrNil != nil) {
+            //save failed, show an error alert
+            UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Save failed", @"Save Failed")
+                                                                message:[errorOrNil localizedFailureReason] //not actually localized
+                                                               delegate:nil
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        } else {
+            //save was successful
+            NSLog(@"Successfully saved event (id='%@').", [objectsOrNil[0] kinveyObjectId]);
+        }
+    } withProgressBlock:nil];
 }
 
 
