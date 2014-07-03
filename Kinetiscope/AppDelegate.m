@@ -13,6 +13,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    (void) [[KCSClient sharedClient] initializeKinveyServiceForAppKey:@"kid_VPG6orglFO"
+                                                        withAppSecret:@"2ae9596aed1248b8bec1301112bccbf1"
+                                                         usingOptions:nil];
+    
+    [KCSPing pingKinveyWithBlock:^(KCSPingResult *result) {
+        if (result.pingWasSuccessful == YES){
+            NSLog(@"Kinvey Ping Success");
+        } else {
+            NSLog(@"Kinvey Ping Failed");
+        }
+    }];
     return YES;
 }
 							

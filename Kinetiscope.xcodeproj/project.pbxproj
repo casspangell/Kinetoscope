@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		89DA11161964B744006BBCA4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 89DA11151964B744006BBCA4 /* video.mp4 */; };
+		89DA11591965F823006BBCA4 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11581965F823006BBCA4 /* KinveyKit.framework */; };
+		89DA115B1965F850006BBCA4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA115A1965F850006BBCA4 /* Accounts.framework */; };
+		89DA115D1965F85C006BBCA4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA115C1965F85C006BBCA4 /* CoreLocation.framework */; };
+		89DA115F1965F865006BBCA4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA115E1965F865006BBCA4 /* libsqlite3.dylib */; };
+		89DA11611965F86E006BBCA4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11601965F86E006BBCA4 /* MobileCoreServices.framework */; };
+		89DA11631965F875006BBCA4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11621965F875006BBCA4 /* Security.framework */; };
+		89DA11651965F87B006BBCA4 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11641965F87B006BBCA4 /* Social.framework */; };
+		89DA11671965F883006BBCA4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11661965F883006BBCA4 /* SystemConfiguration.framework */; };
 		89DA8D1E1963219100EB10C4 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DA8D1D1963219100EB10C4 /* Block.m */; };
 		89E829651963143A002982D6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829641963143A002982D6 /* Foundation.framework */; };
 		89E829671963143A002982D6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89E829661963143A002982D6 /* CoreGraphics.framework */; };
@@ -38,6 +46,14 @@
 
 /* Begin PBXFileReference section */
 		89DA11151964B744006BBCA4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		89DA11581965F823006BBCA4 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
+		89DA115A1965F850006BBCA4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		89DA115C1965F85C006BBCA4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		89DA115E1965F865006BBCA4 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		89DA11601965F86E006BBCA4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		89DA11621965F875006BBCA4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		89DA11641965F87B006BBCA4 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		89DA11661965F883006BBCA4 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		89DA8D1C1963219100EB10C4 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		89DA8D1D1963219100EB10C4 /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		89E829611963143A002982D6 /* Kinetiscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinetiscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +83,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89DA11671965F883006BBCA4 /* SystemConfiguration.framework in Frameworks */,
+				89DA11651965F87B006BBCA4 /* Social.framework in Frameworks */,
+				89DA11631965F875006BBCA4 /* Security.framework in Frameworks */,
+				89DA11611965F86E006BBCA4 /* MobileCoreServices.framework in Frameworks */,
+				89DA115F1965F865006BBCA4 /* libsqlite3.dylib in Frameworks */,
+				89DA115D1965F85C006BBCA4 /* CoreLocation.framework in Frameworks */,
+				89DA115B1965F850006BBCA4 /* Accounts.framework in Frameworks */,
 				89E829671963143A002982D6 /* CoreGraphics.framework in Frameworks */,
+				89DA11591965F823006BBCA4 /* KinveyKit.framework in Frameworks */,
 				89E829691963143A002982D6 /* UIKit.framework in Frameworks */,
 				89E829651963143A002982D6 /* Foundation.framework in Frameworks */,
 			);
@@ -108,6 +132,14 @@
 		89E829631963143A002982D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89DA11661965F883006BBCA4 /* SystemConfiguration.framework */,
+				89DA11641965F87B006BBCA4 /* Social.framework */,
+				89DA11621965F875006BBCA4 /* Security.framework */,
+				89DA11601965F86E006BBCA4 /* MobileCoreServices.framework */,
+				89DA115E1965F865006BBCA4 /* libsqlite3.dylib */,
+				89DA115C1965F85C006BBCA4 /* CoreLocation.framework */,
+				89DA115A1965F850006BBCA4 /* Accounts.framework */,
+				89DA11581965F823006BBCA4 /* KinveyKit.framework */,
 				89E829641963143A002982D6 /* Foundation.framework */,
 				89E829661963143A002982D6 /* CoreGraphics.framework */,
 				89E829681963143A002982D6 /* UIKit.framework */,
@@ -405,9 +437,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
 				INFOPLIST_FILE = "Kinetiscope/Kinetiscope-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -422,9 +459,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
 				INFOPLIST_FILE = "Kinetiscope/Kinetiscope-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
