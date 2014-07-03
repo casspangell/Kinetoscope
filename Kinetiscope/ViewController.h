@@ -11,6 +11,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <KinveyKit/KinveyKit.h>
 
 @interface ViewController : UIViewController <UIScrollViewDelegate>{
     NSMutableArray *blockArray;

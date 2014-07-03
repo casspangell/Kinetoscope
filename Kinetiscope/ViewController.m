@@ -20,6 +20,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    [self loginToKinvey];
+    
     blockArray = [[NSMutableArray alloc] init];
     
     UISwipeGestureRecognizer* swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
@@ -181,6 +183,25 @@
     
     [movieplayer stop];
     [movieplayer.view removeFromSuperview];
+}
+
+#pragma mark - Kinvey
+-(void)loginToKinvey{
+    
+    [KCSUser loginWithUsername:@"test" password:@"qqqqq" withCompletionBlock:^(KCSUser *user, NSError *errorOrNil, KCSUserActionResult result) {
+        if (errorOrNil ==  nil) {
+            NSLog(@"Login successful");
+            
+        } else {        //there was an error with the update save
+            NSString* message = [errorOrNil localizedDescription];
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Create account failed", @"Sign account failed")
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"OK", @"OK")
+                                                  otherButtonTitles: nil];
+            [alert show];
+        }
+    }];
 }
 
 
