@@ -157,6 +157,8 @@
         if(UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath)){
             NSLog(@"%@", moviePath);
             bMoviePath = moviePath;
+            
+            [self saveMovieToKinvey:moviePath];
             UISaveVideoAtPathToSavedPhotosAlbum(moviePath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
         }
     }
@@ -213,7 +215,7 @@
     
     BlockObj* blockobj = [[BlockObj alloc] init];
     blockobj.userId = [KCSUser activeUser].userId;
-    blockobj.name = @"Launch Party";
+    blockobj.name = [NSString stringWithFormat:@"%d", [block getBlockNumber]];
     blockobj.date = [NSDate dateWithTimeIntervalSince1970:1352149171]; //sample date
     
     [store saveObject:blockobj withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {
@@ -230,6 +232,22 @@
             NSLog(@"Successfully saved event (id='%@').", [objectsOrNil[0] kinveyObjectId]);
         }
     } withProgressBlock:nil];
+}
+
+-(void)saveMovieToKinvey:(NSString*)mPath{
+    NSString* filename = @"movie.mov";
+    NSURL* documentsDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL* sourceURL = [NSURL URLWithString:filename relativeToURL:documentsDir];
+    
+    [KCSFileStore uploadFile:sourceURL options:nil completionBlock:^(KCSFile *uploadInfo, NSError *error) {
+        
+        if (error == nil) {
+            NSLog(@"Upload finished. File id='%@', error='%@'.", [uploadInfo fileId], error);
+        }else{
+            NSLog(@"Upload file error. File id='%@', error='%@'.", [uploadInfo fileId], error);
+        }
+        
+    } progressBlock:nil];
 }
 
 
