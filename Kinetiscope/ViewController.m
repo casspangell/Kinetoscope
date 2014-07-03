@@ -36,39 +36,10 @@
     Block *newBlock = [[Block alloc] init];
     [newBlock setBlockNumber:[blockArray count]];
     [newBlock setBlockMoviePath:bMoviePath];
-    [newBlock addTarget:self action:@selector(blockPressed) forControlEvents:UIControlEventTouchUpInside];
+    [newBlock addTarget:self action:@selector(blockPressed:) forControlEvents:UIControlEventTouchUpInside];
     [blockArray addObject:newBlock];
 
     [self reverseBlocks];
-}
-
--(void)blockPressed {
-    NSLog(@"HIT!");
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"video" ofType:@"mp4"];
-    NSURL *streamURL = [NSURL fileURLWithPath:path];
-    movieplayer =[[MPMoviePlayerController alloc] initWithContentURL:streamURL];
-    [movieplayer prepareToPlay];
-    [movieplayer.view setFrame: self.view.bounds];
-    [self.view addSubview: movieplayer.view];
-    movieplayer.fullscreen = YES;
-    movieplayer.shouldAutoplay = YES;
-    movieplayer.repeatMode = MPMovieRepeatModeNone;
-    movieplayer.movieSourceType = MPMovieSourceTypeFile;
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(MPMoviePlayerDidExitFullscreen:) name:MPMoviePlayerDidExitFullscreenNotification object:nil];
-    
-    [movieplayer play];
-    
-}
-
-- (void)MPMoviePlayerDidExitFullscreen:(NSNotification *)notification
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:MPMoviePlayerDidExitFullscreenNotification
-                                                  object:nil];
-    
-    [movieplayer stop];
-    [movieplayer.view removeFromSuperview];
 }
 
 -(void)reverseBlocks{
@@ -78,29 +49,40 @@
     CGFloat blockAndBuffer = block.getWidth + sideBuffer;
     CGFloat topBuffer = 20;
     int blockRow = 0;
-    int rowCount = 0;
+    int colCount = 0;
     
     for (int i = [blockArray count]; i>0; i--) {
         block = [blockArray objectAtIndex:i-1];
         
        if (i == [blockArray count]) {
-            //do nothing
+
+           block.alpha = 0.0;
+           [UIView animateWithDuration:.5 animations:^{
+               block.alpha = 1.0;
+           }];
+           
         }else if (i % 3 == 0) {
-            rowCount = 0;
+            colCount = 0;
             blockRow ++;
         }else{
-            rowCount ++;
+            colCount ++;
         }
-
-        block.frame = CGRectMake(sideBuffer + (rowCount * blockAndBuffer), topBuffer + (blockRow * (block.getHeight + sideBuffer)), block.getWidth, block.getHeight);
+        
+        block.frame = CGRectMake(sideBuffer + (colCount * blockAndBuffer), topBuffer + (blockRow * (block.getHeight + sideBuffer)), block.getWidth, block.getHeight);
         [block setTitle:[NSString stringWithFormat:@"%d", [block getBlockNumber]] forState:(UIControlState)UIControlStateNormal];
         
         self.blockView.frame = CGRectMake(0, 0, 320, (topBuffer + ((blockRow+1) * (block.getHeight + sideBuffer))));
         [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];
         
         [self.blockView addSubview:block];
+        
     }
     
+}
+
+-(IBAction)blockPressed:(id) sender {
+    Block *block = [[Block alloc] init];
+    block = sender;
 }
 
 #pragma mark - Gesture Recognizers
@@ -166,6 +148,7 @@
     }
 }
 
+#pragma mark - Handlers
 -(void)video:(NSString*)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
 
     if(error){
@@ -180,6 +163,15 @@
     }
 }
 
+- (void)MPMoviePlayerDidExitFullscreen:(NSNotification *)notification
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:MPMoviePlayerDidExitFullscreenNotification
+                                                  object:nil];
+    
+    [movieplayer stop];
+    [movieplayer.view removeFromSuperview];
+}
 
 
 - (void)didReceiveMemoryWarning
