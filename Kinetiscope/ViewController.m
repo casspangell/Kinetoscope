@@ -56,16 +56,26 @@
         
        if (i == [blockArray count]) {
 
-           block.alpha = 0.0;
-           [UIView animateWithDuration:.5 animations:^{
+           block.alpha = 0.2;
+           [UIView animateWithDuration:.4 animations:^{
                block.alpha = 1.0;
            }];
            
         }else if (i % 3 == 0) {
             colCount = 0;
             blockRow ++;
+            
+            block.alpha = 0.1;
+            [UIView animateWithDuration:.7 animations:^{
+                block.alpha = 1.0;
+            }];
+            
         }else{
             colCount ++;
+            block.alpha = 0.0;
+            [UIView animateWithDuration:1.0 animations:^{
+                block.alpha = 1.0;
+            }];
         }
         
         block.frame = CGRectMake(sideBuffer + (colCount * blockAndBuffer), topBuffer + (blockRow * (block.getHeight + sideBuffer)), block.getWidth, block.getHeight);
