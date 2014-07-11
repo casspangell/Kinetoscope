@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Kinetiscope/ViewController.m"
-            timestampString = "426115806.696538"
+            timestampString = "426794016.139123"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
-            landmarkName = "-saveMovieToKinvey:"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "-video:didFinishSavingWithError:contextInfo:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -145,28 +145,25 @@
 // Gives you a moviePath. You verify that the movie can be saved to the device’s photo album, and save it if so.
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
-    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
-    [self dismissViewControllerAnimated:NO completion:nil];
+    NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
     
-    // Handle movie capture
-    // Verify that the movie can be saved to the device’s photo album
-    if (CFStringCompare ((__bridge_retained CFStringRef) mediaType, kUTTypeMovie, 0) == kCFCompareEqualTo) {
-        NSString *moviePath = [[info objectForKey:UIImagePickerControllerMediaURL] path];
-        
-        // default method provided by the SDK to save videos to the Photos Album. As parameters, you pass both the path to the video to be saved, as well as a callback method that will inform you of the status of the save operation.
-        if(UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(moviePath)){
-            NSLog(@"%@", moviePath);
-            bMoviePath = moviePath;
-            
-            [self saveMovieToKinvey:moviePath];
-            UISaveVideoAtPathToSavedPhotosAlbum(moviePath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-        }
+    NSData *videoData = [NSData dataWithContentsOfURL:videoURL];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *tempPath = [documentsDirectory stringByAppendingFormat:@"/vid1.mp4"];
+    
+    BOOL success = [videoData writeToFile:tempPath atomically:NO];
+    
+    if (success){
+        UISaveVideoAtPathToSavedPhotosAlbum(tempPath, self, @selector(video:didFinishSavingWithError:contextInfo:), NULL);
+        NSLog(@"saved!!!! %@",tempPath);
+    
     }
 }
 
 #pragma mark - Handlers
 -(void)video:(NSString*)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{
-
+    NSLog(@"videoPath %@", videoPath);
     if(error){
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Video Saving Failed"
                                                        delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -175,7 +172,8 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Video Saved" message:@"Saved To Photo Album"
                                                        delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-       [self createNewBlock];
+      // [self createNewBlock];
+        [self saveMovieToKinvey:videoPath];
     }
 }
 
@@ -235,7 +233,7 @@
 }
 
 -(void)saveMovieToKinvey:(NSString*)mPath{
-    NSString* filename = @"movie.mov";
+    NSString* filename = @"vid1.mp4";
     NSURL* documentsDir = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL* sourceURL = [NSURL URLWithString:filename relativeToURL:documentsDir];
     
