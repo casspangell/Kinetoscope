@@ -145,6 +145,8 @@
 // Gives you a moviePath. You verify that the movie can be saved to the device’s photo album, and save it if so.
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
     NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
     
     NSData *videoData = [NSData dataWithContentsOfURL:videoURL];
@@ -172,9 +174,11 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Video Saved" message:@"Saved To Photo Album"
                                                        delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-      // [self createNewBlock];
         [self saveMovieToKinvey:videoPath];
     }
+    
+    [movieplayer stop];
+    [movieplayer.view removeFromSuperview];
 }
 
 - (void)MPMoviePlayerDidExitFullscreen:(NSNotification *)notification
@@ -213,6 +217,7 @@
     
     BlockObj* blockobj = [[BlockObj alloc] init];
     blockobj.userId = [KCSUser activeUser].userId;
+    blockobj.fileId = videoFileId;
     blockobj.name = [NSString stringWithFormat:@"%d", [block getBlockNumber]];
     blockobj.date = [NSDate dateWithTimeIntervalSince1970:1352149171]; //sample date
     
@@ -241,6 +246,8 @@
         
         if (error == nil) {
             NSLog(@"Upload finished. File id='%@', error='%@'.", [uploadInfo fileId], error);
+            videoFileId = [uploadInfo fileId];
+            [self createNewBlock];
         }else{
             NSLog(@"Upload file error. File id='%@', error='%@'.", [uploadInfo fileId], error);
         }

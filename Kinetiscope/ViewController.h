@@ -17,6 +17,7 @@
     NSMutableArray *blockArray;
     NSString *bMoviePath;
     MPMoviePlayerController *movieplayer;
+    NSString *videoFileId;
 }
 
 -(BOOL)startCameraControllerFromViewController:(UIViewController*)controller

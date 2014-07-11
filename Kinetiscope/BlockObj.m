@@ -15,6 +15,7 @@
     return @{
              @"entityId" : KCSEntityKeyId, //the required _id field
              @"userId" : @"userId",
+             @"fileId" : @"fileId",
              @"block" : @"block",
              @"name" : @"name",
              @"date" : @"date"

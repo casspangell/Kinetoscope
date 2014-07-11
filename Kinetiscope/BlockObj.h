@@ -14,6 +14,7 @@
 
 @property (nonatomic, copy) NSString* entityId; //Kinvey entity _id
 @property (nonatomic, copy) NSString* userId;
+@property (nonatomic, copy) NSString* fileId;
 @property (nonatomic, copy) Block* block;
 @property (nonatomic, copy) NSString* name;
 @property (nonatomic, copy) NSDate* date;
