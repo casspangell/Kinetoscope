@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import "Block.h"
 #import "BlockObj.h"
+#import "MBProgressHUD.h"
 
-@interface ViewController ()
+@interface ViewController () {
+    MBProgressHUD *HUD;
+}
 
 @end
 
@@ -89,6 +92,7 @@
         [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];
         
         [self.blockView addSubview:block];
+        [HUD hide:YES];
         
     }
     
@@ -101,8 +105,8 @@
 
 #pragma mark - Gesture Recognizers
 - (void)handleSwipeLeft:(UIGestureRecognizer*)recognizer {
-    [self createNewBlock];
-    //[self startCameraControllerFromViewController:self usingDelegate:self];
+    //[self createNewBlock];
+    [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
 #pragma mark - Button Methods
@@ -157,8 +161,16 @@
     BOOL success = [videoData writeToFile:tempPath atomically:NO];
     
     if (success){
-        UISaveVideoAtPathToSavedPhotosAlbum(tempPath, self, @selector(video:didFinishSavingWithError:contextInfo:), NULL);
+       // UISaveVideoAtPathToSavedPhotosAlbum(tempPath, self, @selector(video:didFinishSavingWithError:contextInfo:), NULL);
         NSLog(@"saved!!!! %@",tempPath);
+        
+        [self saveMovieToKinvey:tempPath];
+        [movieplayer stop];
+        [movieplayer.view removeFromSuperview];
+        
+        HUD = [[MBProgressHUD alloc] initWithView:self.view];
+        [self.view addSubview:HUD];
+        [HUD show:YES];
     
     }
 }
@@ -174,11 +186,10 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Video Saved" message:@"Saved To Photo Album"
                                                        delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alert show];
-        [self saveMovieToKinvey:videoPath];
+
     }
     
-    [movieplayer stop];
-    [movieplayer.view removeFromSuperview];
+
 }
 
 - (void)MPMoviePlayerDidExitFullscreen:(NSNotification *)notification
@@ -247,7 +258,11 @@
         if (error == nil) {
             NSLog(@"Upload finished. File id='%@', error='%@'.", [uploadInfo fileId], error);
             videoFileId = [uploadInfo fileId];
-            [self createNewBlock];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self createNewBlock];
+            });
+            
         }else{
             NSLog(@"Upload file error. File id='%@', error='%@'.", [uploadInfo fileId], error);
         }

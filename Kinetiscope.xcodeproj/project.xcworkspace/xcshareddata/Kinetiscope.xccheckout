@@ -10,29 +10,29 @@
 	<string>Kinetiscope</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B3FAEC02-4A13-48DC-9B50-ECEAB351A4BC</key>
-		<string>ssh://github.com/casspangell/Kinetoscope.git</string>
+		<key>9EC401887C6DC3C107E8149FE0610CAFBA4856FB</key>
+		<string>github.com:casspangell/Kinetoscope.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Kinetiscope.xcodeproj/project.xcworkspace</string>
+	<string>Kinetiscope.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B3FAEC02-4A13-48DC-9B50-ECEAB351A4BC</key>
+		<key>9EC401887C6DC3C107E8149FE0610CAFBA4856FB</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/casspangell/Kinetoscope.git</string>
+	<string>github.com:casspangell/Kinetoscope.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B3FAEC02-4A13-48DC-9B50-ECEAB351A4BC</string>
+	<string>9EC401887C6DC3C107E8149FE0610CAFBA4856FB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B3FAEC02-4A13-48DC-9B50-ECEAB351A4BC</string>
+			<string>9EC401887C6DC3C107E8149FE0610CAFBA4856FB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Kinetoscope</string>
 		</dict>

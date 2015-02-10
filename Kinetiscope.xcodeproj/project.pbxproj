@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89187CFB1A8AB5FF00033AAD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 89187CF71A8AB5FF00033AAD /* LICENSE */; };
+		89187CFC1A8AB5FF00033AAD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 89187CF91A8AB5FF00033AAD /* MBProgressHUD.m */; };
+		89187CFD1A8AB5FF00033AAD /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 89187CFA1A8AB5FF00033AAD /* README.mdown */; };
 		89DA11161964B744006BBCA4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 89DA11151964B744006BBCA4 /* video.mp4 */; };
 		89DA11591965F823006BBCA4 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11581965F823006BBCA4 /* KinveyKit.framework */; };
 		89DA115B1965F850006BBCA4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA115A1965F850006BBCA4 /* Accounts.framework */; };
@@ -46,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89187CF71A8AB5FF00033AAD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		89187CF81A8AB5FF00033AAD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		89187CF91A8AB5FF00033AAD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		89187CFA1A8AB5FF00033AAD /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		89DA11151964B744006BBCA4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		89DA11581965F823006BBCA4 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		89DA115A1965F850006BBCA4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -113,6 +120,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89187CF61A8AB5FF00033AAD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				89187CF71A8AB5FF00033AAD /* LICENSE */,
+				89187CF81A8AB5FF00033AAD /* MBProgressHUD.h */,
+				89187CF91A8AB5FF00033AAD /* MBProgressHUD.m */,
+				89187CFA1A8AB5FF00033AAD /* README.mdown */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		89E829581963143A002982D6 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +172,7 @@
 		89E8296A1963143A002982D6 /* Kinetiscope */ = {
 			isa = PBXGroup;
 			children = (
+				89187CF61A8AB5FF00033AAD /* MBProgressHUD */,
 				89DA11151964B744006BBCA4 /* video.mp4 */,
 				89E829731963143A002982D6 /* AppDelegate.h */,
 				89E829741963143A002982D6 /* AppDelegate.m */,
@@ -248,7 +267,7 @@
 				ORGANIZATIONNAME = mondolabs;
 				TargetAttributes = {
 					89E829601963143A002982D6 = {
-						DevelopmentTeam = 8DH4YXH58S;
+						DevelopmentTeam = 47J4F7UN55;
 					};
 					89E829841963143A002982D6 = {
 						TestTargetID = 89E829601963143A002982D6;
@@ -279,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89187CFB1A8AB5FF00033AAD /* LICENSE in Resources */,
 				89E8297B1963143A002982D6 /* Main_iPad.storyboard in Resources */,
 				89E829801963143A002982D6 /* Images.xcassets in Resources */,
 				89DA11161964B744006BBCA4 /* video.mp4 in Resources */,
@@ -303,6 +323,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E8297E1963143A002982D6 /* ViewController.m in Sources */,
+				89187CFC1A8AB5FF00033AAD /* MBProgressHUD.m in Sources */,
+				89187CFD1A8AB5FF00033AAD /* README.mdown in Sources */,
 				89DA8D1E1963219100EB10C4 /* Block.m in Sources */,
 				89DA116A1965FB50006BBCA4 /* BlockObj.m in Sources */,
 				89E829751963143A002982D6 /* AppDelegate.m in Sources */,
