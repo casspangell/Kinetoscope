@@ -10,6 +10,10 @@
 #import "Block.h"
 #import "BlockObj.h"
 #import "MBProgressHUD.h"
+#import <AVFoundation/AVFoundation.h>
+#import <math.h>
+
+static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 @interface ViewController () {
     MBProgressHUD *HUD;
@@ -42,6 +46,7 @@
     Block *newBlock = [[Block alloc] init];
     [newBlock setBlockNumber:[blockArray count]];
     [newBlock setBlockMoviePath:bMoviePath];
+    [newBlock setPhoto:photoThumb];
     [newBlock addTarget:self action:@selector(blockPressed:) forControlEvents:UIControlEventTouchUpInside];
     [blockArray addObject:newBlock];
     
@@ -136,7 +141,7 @@
     cameraUI.mediaTypes = [[NSArray alloc] initWithObjects:(NSString*)kUTTypeMovie, nil];
     
     // Hides controls for moving or scaling or trimming
-    cameraUI.allowsEditing = NO;
+    cameraUI.allowsEditing = YES;
     cameraUI.delegate = delegate;
     
     // Display image picker
@@ -148,32 +153,66 @@
 
 // Gives you a moviePath. You verify that the movie can be saved to the device’s photo album, and save it if so.
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    
-    [self dismissViewControllerAnimated:NO completion:nil];
-    
+
     NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+    int seconds;
     
-    NSData *videoData = [NSData dataWithContentsOfURL:videoURL];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *tempPath = [documentsDirectory stringByAppendingFormat:@"/vid1.mp4"];
-    
-    BOOL success = [videoData writeToFile:tempPath atomically:NO];
-    
-    if (success){
-       // UISaveVideoAtPathToSavedPhotosAlbum(tempPath, self, @selector(video:didFinishSavingWithError:contextInfo:), NULL);
-        NSLog(@"saved!!!! %@",tempPath);
-        
-        [self saveMovieToKinvey:tempPath];
-        [movieplayer stop];
-        [movieplayer.view removeFromSuperview];
-        
-        HUD = [[MBProgressHUD alloc] initWithView:self.view];
-        [self.view addSubview:HUD];
-        [HUD show:YES];
-    
+    NSString *type = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([type isEqualToString:(NSString *)kUTTypeVideo] ||
+        [type isEqualToString:(NSString *)kUTTypeMovie]) { // movie != video
+
+        //Grabs how long the video is. Currently not being used.
+        AVURLAsset *avUrl = [AVURLAsset assetWithURL:videoURL];
+        CMTime time = [avUrl duration];
+        seconds = ceil(time.value/time.timescale);
     }
+
+        [self dismissViewControllerAnimated:NO completion:nil];
+        
+        NSData *videoData = [NSData dataWithContentsOfURL:videoURL];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        NSString *tempPath = [documentsDirectory stringByAppendingFormat:@"/vid1.mp4"];
+        
+        BOOL success = [videoData writeToFile:tempPath atomically:NO];
+        
+        if (success){
+           // UISaveVideoAtPathToSavedPhotosAlbum(tempPath, self, @selector(video:didFinishSavingWithError:contextInfo:), NULL);
+            NSLog(@"saved!!!! %@",tempPath);
+            
+            [self saveMovieToKinvey:tempPath];
+            [movieplayer stop];
+            [movieplayer.view removeFromSuperview];
+            
+            HUD = [[MBProgressHUD alloc] initWithView:self.view];
+            [self.view addSubview:HUD];
+            [HUD show:YES];
+        
+        }
+    
+    //Grab image for thumb. Currently saving image at middle of vid
+    AVAsset *myAsset = [AVURLAsset assetWithURL:videoURL];
+    AVAssetImageGenerator *imageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:myAsset];
+    
+    Float64 durationSeconds = CMTimeGetSeconds([myAsset duration]);
+    CMTime midpoint = CMTimeMakeWithSeconds(durationSeconds/2.0, 600);
+    NSError *error;
+    CMTime actualTime;
+    
+    CGImageRef halfWayImage = [imageGenerator copyCGImageAtTime:midpoint actualTime:&actualTime error:&error];
+    
+    if (halfWayImage != NULL) {
+        
+        NSString *actualTimeString = (NSString *)CFBridgingRelease(CMTimeCopyDescription(NULL, actualTime));
+        NSString *requestedTimeString = (NSString *)CFBridgingRelease(CMTimeCopyDescription(NULL, midpoint));
+        photoThumb = [[UIImage alloc] initWithCGImage: halfWayImage
+                                                scale: 1.0
+                                          orientation: UIImageOrientationRight]; //CGRef is saving UIImage rotated
+    }
+
+
 }
+
 
 #pragma mark - Handlers
 -(void)video:(NSString*)videoPath didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo{

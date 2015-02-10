@@ -10,6 +10,8 @@
 		89187CFB1A8AB5FF00033AAD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 89187CF71A8AB5FF00033AAD /* LICENSE */; };
 		89187CFC1A8AB5FF00033AAD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 89187CF91A8AB5FF00033AAD /* MBProgressHUD.m */; };
 		89187CFD1A8AB5FF00033AAD /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 89187CFA1A8AB5FF00033AAD /* README.mdown */; };
+		89187CFF1A8AC13000033AAD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89187CFE1A8AC13000033AAD /* CoreMedia.framework */; };
+		89187D011A8AC13600033AAD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89187D001A8AC13600033AAD /* AVFoundation.framework */; };
 		89DA11161964B744006BBCA4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 89DA11151964B744006BBCA4 /* video.mp4 */; };
 		89DA11591965F823006BBCA4 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11581965F823006BBCA4 /* KinveyKit.framework */; };
 		89DA115B1965F850006BBCA4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA115A1965F850006BBCA4 /* Accounts.framework */; };
@@ -53,6 +55,8 @@
 		89187CF81A8AB5FF00033AAD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		89187CF91A8AB5FF00033AAD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		89187CFA1A8AB5FF00033AAD /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
+		89187CFE1A8AC13000033AAD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		89187D001A8AC13600033AAD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		89DA11151964B744006BBCA4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		89DA11581965F823006BBCA4 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		89DA115A1965F850006BBCA4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -93,6 +97,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89187D011A8AC13600033AAD /* AVFoundation.framework in Frameworks */,
+				89187CFF1A8AC13000033AAD /* CoreMedia.framework in Frameworks */,
 				89DA11671965F883006BBCA4 /* SystemConfiguration.framework in Frameworks */,
 				89DA11651965F87B006BBCA4 /* Social.framework in Frameworks */,
 				89DA11631965F875006BBCA4 /* Security.framework in Frameworks */,
@@ -153,6 +159,8 @@
 		89E829631963143A002982D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89187D001A8AC13600033AAD /* AVFoundation.framework */,
+				89187CFE1A8AC13000033AAD /* CoreMedia.framework */,
 				89DA11661965F883006BBCA4 /* SystemConfiguration.framework */,
 				89DA11641965F87B006BBCA4 /* Social.framework */,
 				89DA11621965F875006BBCA4 /* Security.framework */,

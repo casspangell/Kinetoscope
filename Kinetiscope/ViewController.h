@@ -18,6 +18,7 @@
     NSString *bMoviePath;
     MPMoviePlayerController *movieplayer;
     NSString *videoFileId;
+    UIImage *photoThumb;
 }
 
 -(BOOL)startCameraControllerFromViewController:(UIViewController*)controller

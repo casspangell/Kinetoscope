@@ -15,8 +15,10 @@
     self = [super init];
     if (self) {
 
-        self.backgroundColor = [UIColor redColor];
+       // self.backgroundColor = [UIColor redColor];
         self.frame = CGRectMake(0, 0, 100, 100);
+        
+      //  [self setBackgroundImage:[self getPhoto] forState:UIControlStateNormal];
         
 
     }
@@ -48,6 +50,19 @@
 
 -(NSString*)getBlockMoviePath{
     return blockMoviePath;
+}
+
+-(UIImage*)getPhoto {
+    return photo;
+}
+
+-(void)setPhoto:(UIImage*)p {
+    photo = p;
+    [self setBackgroundImage:photo forState:UIControlStateNormal];
+    
+    UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    [bg setBackgroundColor:[UIColor colorWithWhite:0 alpha:.5]];
+    [self addSubview:bg];
 }
 
 

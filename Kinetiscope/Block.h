@@ -12,6 +12,7 @@
     double blockNumber;
     UIView *blockStringView;
     NSString *blockMoviePath;
+    UIImage *photo;
 }
 
 @property(nonatomic) NSString *blockLabel;
@@ -24,4 +25,7 @@
 
 -(void)setBlockMoviePath:(NSString*)mPath;
 -(NSString*)getBlockMoviePath;
+
+-(UIImage*)getPhoto;
+-(void)setPhoto:(UIImage*)p;
 @end
