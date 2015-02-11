@@ -42,9 +42,13 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 #pragma mark - Methods
 -(void)createNewBlock{
+    NSDate *date = [NSDate new];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+    [format setDateFormat:@"MM-dd-yy"];
+    NSString *dateString = [format stringFromDate:date];
     
     Block *newBlock = [[Block alloc] init];
-    [newBlock setBlockNumber:[blockArray count]];
+    [newBlock setBlockNumber:dateString];
     [newBlock setBlockMoviePath:bMoviePath];
     [newBlock setPhoto:photoThumb];
     [newBlock addTarget:self action:@selector(blockPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -91,7 +95,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
         }
         
         block.frame = CGRectMake(sideBuffer + (colCount * blockAndBuffer), topBuffer + (blockRow * (block.getHeight + sideBuffer)), block.getWidth, block.getHeight);
-        [block setTitle:[NSString stringWithFormat:@"%d", [block getBlockNumber]] forState:(UIControlState)UIControlStateNormal];
+        [block setTitle:[block getBlockNumber] forState:(UIControlState)UIControlStateNormal];
         
         self.blockView.frame = CGRectMake(0, 0, 320, (topBuffer + ((blockRow+1) * (block.getHeight + sideBuffer))));
         [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];
@@ -203,8 +207,6 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     
     if (halfWayImage != NULL) {
         
-        NSString *actualTimeString = (NSString *)CFBridgingRelease(CMTimeCopyDescription(NULL, actualTime));
-        NSString *requestedTimeString = (NSString *)CFBridgingRelease(CMTimeCopyDescription(NULL, midpoint));
         photoThumb = [[UIImage alloc] initWithCGImage: halfWayImage
                                                 scale: 1.0
                                           orientation: UIImageOrientationRight]; //CGRef is saving UIImage rotated
@@ -268,7 +270,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     BlockObj* blockobj = [[BlockObj alloc] init];
     blockobj.userId = [KCSUser activeUser].userId;
     blockobj.fileId = videoFileId;
-    blockobj.name = [NSString stringWithFormat:@"%d", [block getBlockNumber]];
+    blockobj.name = [NSString stringWithFormat:@"%@", [block getBlockNumber]];
     blockobj.date = [NSDate dateWithTimeIntervalSince1970:1352149171]; //sample date
     
     [store saveObject:blockobj withCompletionBlock:^(NSArray *objectsOrNil, NSError *errorOrNil) {

@@ -15,17 +15,12 @@
     self = [super init];
     if (self) {
 
-       // self.backgroundColor = [UIColor redColor];
         self.frame = CGRectMake(0, 0, 100, 100);
-        
-      //  [self setBackgroundImage:[self getPhoto] forState:UIControlStateNormal];
-        
 
     }
     
     return self;
 }
-
 
 #pragma mark - Getters / Setters
 -(CGFloat)getWidth {
@@ -36,11 +31,11 @@
     return self.frame.size.height;
 }
 
--(void)setBlockNumber:(int)blockNum {
+-(void)setBlockNumber:(NSString*)blockNum {
     blockNumber = blockNum;
 }
 
--(int)getBlockNumber {
+-(NSString*)getBlockNumber {
     return blockNumber;
 }
 
