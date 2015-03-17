@@ -32,9 +32,9 @@
     blockArray = [[NSMutableArray alloc] init];
     [_scrollView setBackgroundColor:[UIColor clearColor]];
     [_blockView setBackgroundColor:[UIColor clearColor]];
-    
+
     BgLayer *layer = [[BgLayer alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
-    //[layer setAlpha:0.3];
+//    [layer setAlpha:0.5];
     [self.view insertSubview:layer belowSubview:_scrollView];
     
     UISwipeGestureRecognizer* swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
@@ -100,7 +100,7 @@
         }
         
         block.frame = CGRectMake(sideBuffer + (colCount * blockAndBuffer), topBuffer + (blockRow * (block.getHeight + sideBuffer)), block.getWidth, block.getHeight);
-        [block setTitle:[block getBlockNumber] forState:(UIControlState)UIControlStateNormal];
+      //BLOCK DATE  [block setTitle:[block getBlockNumber] forState:(UIControlState)UIControlStateNormal];
         
         self.blockView.frame = CGRectMake(0, 0, 320, (topBuffer + ((blockRow+1) * (block.getHeight + sideBuffer))));
         [self.scrollView setContentSize:CGSizeMake(self.blockView.frame.size.width, self.blockView.frame.size.height)];

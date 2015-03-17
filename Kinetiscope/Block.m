@@ -64,7 +64,7 @@
     [self setBackgroundImage:photo forState:UIControlStateNormal];
     
     bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    [bg setBackgroundColor:[UIColor colorWithWhite:0 alpha:.2]];
+    [bg setBackgroundColor:[UIColor colorWithWhite:1 alpha:.3]];
     [self addSubview:bg];
 }
 
@@ -83,10 +83,10 @@
         
         if (setOn) {
             setOn = NO;
-            [bg setBackgroundColor:[UIColor colorWithWhite:0 alpha:.2]];
+            [bg setBackgroundColor:[UIColor colorWithWhite:1 alpha:.3]];
         }else{
             setOn = YES;
-            [bg setBackgroundColor:[UIColor colorWithWhite:0 alpha:.8]];
+            [bg setBackgroundColor:[UIColor colorWithWhite:1 alpha:1]];
         }
         
     }
