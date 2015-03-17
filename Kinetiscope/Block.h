@@ -14,9 +14,12 @@
     UIView *blockStringView;
     NSString *blockMoviePath;
     UIImage *photo;
+    UIView *bg;
+    BOOL setOn;
 }
 
 @property(nonatomic) NSString *blockLabel;
+@property(nonatomic) UIButton *blockButton;
 
 -(CGFloat)getWidth;
 -(CGFloat)getHeight;
