@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "89E829601963143A002982D6"
-               BuildableName = "Kinetiscope.app"
+               BuildableName = "Trim.app"
                BlueprintName = "Kinetiscope"
                ReferencedContainer = "container:Kinetiscope.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89E829601963143A002982D6"
-            BuildableName = "Kinetiscope.app"
+            BuildableName = "Trim.app"
             BlueprintName = "Kinetiscope"
             ReferencedContainer = "container:Kinetiscope.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89E829601963143A002982D6"
-            BuildableName = "Kinetiscope.app"
+            BuildableName = "Trim.app"
             BlueprintName = "Kinetiscope"
             ReferencedContainer = "container:Kinetiscope.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "89E829601963143A002982D6"
-            BuildableName = "Kinetiscope.app"
+            BuildableName = "Trim.app"
             BlueprintName = "Kinetiscope"
             ReferencedContainer = "container:Kinetiscope.xcodeproj">
          </BuildableReference>

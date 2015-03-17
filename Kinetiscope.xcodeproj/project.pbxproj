@@ -12,6 +12,9 @@
 		89187CFD1A8AB5FF00033AAD /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 89187CFA1A8AB5FF00033AAD /* README.mdown */; };
 		89187CFF1A8AC13000033AAD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89187CFE1A8AC13000033AAD /* CoreMedia.framework */; };
 		89187D011A8AC13600033AAD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89187D001A8AC13600033AAD /* AVFoundation.framework */; };
+		89520CFC1AB88FC400FC950B /* Chasing_Mavericks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 89520CFB1AB88FB700FC950B /* Chasing_Mavericks.mp4 */; };
+		89520CFE1AB8904B00FC950B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89520CFD1AB8904B00FC950B /* MediaPlayer.framework */; };
+		8980205B1A8BCB38005DECC7 /* BgLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8980205A1A8BCB38005DECC7 /* BgLayer.m */; };
 		89DA11161964B744006BBCA4 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 89DA11151964B744006BBCA4 /* video.mp4 */; };
 		89DA11591965F823006BBCA4 /* KinveyKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA11581965F823006BBCA4 /* KinveyKit.framework */; };
 		89DA115B1965F850006BBCA4 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89DA115A1965F850006BBCA4 /* Accounts.framework */; };
@@ -57,6 +60,10 @@
 		89187CFA1A8AB5FF00033AAD /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		89187CFE1A8AC13000033AAD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		89187D001A8AC13600033AAD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		89520CFB1AB88FB700FC950B /* Chasing_Mavericks.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Chasing_Mavericks.mp4; sourceTree = "<group>"; };
+		89520CFD1AB8904B00FC950B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		898020591A8BCB38005DECC7 /* BgLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BgLayer.h; sourceTree = "<group>"; };
+		8980205A1A8BCB38005DECC7 /* BgLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BgLayer.m; sourceTree = "<group>"; };
 		89DA11151964B744006BBCA4 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		89DA11581965F823006BBCA4 /* KinveyKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KinveyKit.framework; sourceTree = "<group>"; };
 		89DA115A1965F850006BBCA4 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -70,7 +77,7 @@
 		89DA11691965FB50006BBCA4 /* BlockObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockObj.m; sourceTree = "<group>"; };
 		89DA8D1C1963219100EB10C4 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		89DA8D1D1963219100EB10C4 /* Block.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
-		89E829611963143A002982D6 /* Kinetiscope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kinetiscope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89E829611963143A002982D6 /* Trim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E829641963143A002982D6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		89E829661963143A002982D6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		89E829681963143A002982D6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89520CFE1AB8904B00FC950B /* MediaPlayer.framework in Frameworks */,
 				89187D011A8AC13600033AAD /* AVFoundation.framework in Frameworks */,
 				89187CFF1A8AC13000033AAD /* CoreMedia.framework in Frameworks */,
 				89DA11671965F883006BBCA4 /* SystemConfiguration.framework in Frameworks */,
@@ -137,6 +145,17 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		89520CFA1AB88EDB00FC950B /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				89DA8D1C1963219100EB10C4 /* Block.h */,
+				89DA8D1D1963219100EB10C4 /* Block.m */,
+				89DA11681965FB50006BBCA4 /* BlockObj.h */,
+				89DA11691965FB50006BBCA4 /* BlockObj.m */,
+			);
+			name = Block;
+			sourceTree = "<group>";
+		};
 		89E829581963143A002982D6 = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +169,7 @@
 		89E829621963143A002982D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				89E829611963143A002982D6 /* Kinetiscope.app */,
+				89E829611963143A002982D6 /* Trim.app */,
 				89E829851963143A002982D6 /* KinetiscopeTests.xctest */,
 			);
 			name = Products;
@@ -159,6 +178,7 @@
 		89E829631963143A002982D6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89520CFD1AB8904B00FC950B /* MediaPlayer.framework */,
 				89187D001A8AC13600033AAD /* AVFoundation.framework */,
 				89187CFE1A8AC13000033AAD /* CoreMedia.framework */,
 				89DA11661965F883006BBCA4 /* SystemConfiguration.framework */,
@@ -180,6 +200,7 @@
 		89E8296A1963143A002982D6 /* Kinetiscope */ = {
 			isa = PBXGroup;
 			children = (
+				89520CFB1AB88FB700FC950B /* Chasing_Mavericks.mp4 */,
 				89187CF61A8AB5FF00033AAD /* MBProgressHUD */,
 				89DA11151964B744006BBCA4 /* video.mp4 */,
 				89E829731963143A002982D6 /* AppDelegate.h */,
@@ -188,10 +209,9 @@
 				89E829791963143A002982D6 /* Main_iPad.storyboard */,
 				89E8297C1963143A002982D6 /* ViewController.h */,
 				89E8297D1963143A002982D6 /* ViewController.m */,
-				89DA8D1C1963219100EB10C4 /* Block.h */,
-				89DA8D1D1963219100EB10C4 /* Block.m */,
-				89DA11681965FB50006BBCA4 /* BlockObj.h */,
-				89DA11691965FB50006BBCA4 /* BlockObj.m */,
+				898020591A8BCB38005DECC7 /* BgLayer.h */,
+				8980205A1A8BCB38005DECC7 /* BgLayer.m */,
+				89520CFA1AB88EDB00FC950B /* Block */,
 				89E8297F1963143A002982D6 /* Images.xcassets */,
 				89E8296B1963143A002982D6 /* Supporting Files */,
 			);
@@ -244,7 +264,7 @@
 			);
 			name = Kinetiscope;
 			productName = Kinetiscope;
-			productReference = 89E829611963143A002982D6 /* Kinetiscope.app */;
+			productReference = 89E829611963143A002982D6 /* Trim.app */;
 			productType = "com.apple.product-type.application";
 		};
 		89E829841963143A002982D6 /* KinetiscopeTests */ = {
@@ -311,6 +331,7 @@
 				89E829801963143A002982D6 /* Images.xcassets in Resources */,
 				89DA11161964B744006BBCA4 /* video.mp4 in Resources */,
 				89E829781963143A002982D6 /* Main_iPhone.storyboard in Resources */,
+				89520CFC1AB88FC400FC950B /* Chasing_Mavericks.mp4 in Resources */,
 				89E8296F1963143A002982D6 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +353,7 @@
 			files = (
 				89E8297E1963143A002982D6 /* ViewController.m in Sources */,
 				89187CFC1A8AB5FF00033AAD /* MBProgressHUD.m in Sources */,
+				8980205B1A8BCB38005DECC7 /* BgLayer.m in Sources */,
 				89187CFD1A8AB5FF00033AAD /* README.mdown in Sources */,
 				89DA8D1E1963219100EB10C4 /* Block.m in Sources */,
 				89DA116A1965FB50006BBCA4 /* BlockObj.m in Sources */,
@@ -426,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -459,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -481,7 +503,7 @@
 				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
 				INFOPLIST_FILE = "Kinetiscope/Kinetiscope-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Trim;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -503,7 +525,7 @@
 				GCC_PREFIX_HEADER = "Kinetiscope/Kinetiscope-Prefix.pch";
 				INFOPLIST_FILE = "Kinetiscope/Kinetiscope-Info.plist";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Trim;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;

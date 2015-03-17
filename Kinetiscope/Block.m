@@ -56,7 +56,7 @@
     [self setBackgroundImage:photo forState:UIControlStateNormal];
     
     UIView *bg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    [bg setBackgroundColor:[UIColor colorWithWhite:0 alpha:.5]];
+    [bg setBackgroundColor:[UIColor colorWithWhite:0 alpha:.2]];
     [self addSubview:bg];
 }
 

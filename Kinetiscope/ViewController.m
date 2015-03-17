@@ -12,8 +12,7 @@
 #import "MBProgressHUD.h"
 #import <AVFoundation/AVFoundation.h>
 #import <math.h>
-
-static inline double radians (double degrees) {return degrees * M_PI/180;}
+#import "BgLayer.h"
 
 @interface ViewController () {
     MBProgressHUD *HUD;
@@ -31,6 +30,12 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     [self loginToKinvey];
     
     blockArray = [[NSMutableArray alloc] init];
+    [_scrollView setBackgroundColor:[UIColor clearColor]];
+    [_blockView setBackgroundColor:[UIColor clearColor]];
+    
+    BgLayer *layer = [[BgLayer alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    //[layer setAlpha:0.3];
+    [self.view insertSubview:layer belowSubview:_scrollView];
     
     UISwipeGestureRecognizer* swipeLeftGestureRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeft:)];
     swipeLeftGestureRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
@@ -114,8 +119,8 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 #pragma mark - Gesture Recognizers
 - (void)handleSwipeLeft:(UIGestureRecognizer*)recognizer {
-    //[self createNewBlock];
-    [self startCameraControllerFromViewController:self usingDelegate:self];
+    [self createNewBlock];
+   // [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
 #pragma mark - Button Methods
@@ -123,9 +128,10 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     [self createNewBlock];
 }
 
--(IBAction)recordButtonPressed:(id)sender{
+/*-(IBAction)recordButtonPressed:(id)sender{
     [self startCameraControllerFromViewController:self usingDelegate:self];
 }
+*/
 
 #pragma mark - Camera Elements
 -(BOOL) startCameraControllerFromViewController:(UIViewController *)controller usingDelegate:(id)delegate{
