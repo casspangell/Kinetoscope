@@ -16,6 +16,8 @@
     if (self) {
 
         self.frame = CGRectMake(0, 0, 100, 100);
+        self.layer.cornerRadius = 7;
+        self.layer.masksToBounds = YES;
 
     }
     
