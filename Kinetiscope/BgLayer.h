@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface BgLayer : UIView
 
 @property(nonatomic) MPMoviePlayerController *moviePlayer;
+@property(nonatomic) AVPlayer *avPlayer;
 @end

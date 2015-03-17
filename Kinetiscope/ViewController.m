@@ -119,8 +119,8 @@
 
 #pragma mark - Gesture Recognizers
 - (void)handleSwipeLeft:(UIGestureRecognizer*)recognizer {
-    [self createNewBlock];
-   // [self startCameraControllerFromViewController:self usingDelegate:self];
+    //[self createNewBlock];
+    [self startCameraControllerFromViewController:self usingDelegate:self];
 }
 
 #pragma mark - Button Methods

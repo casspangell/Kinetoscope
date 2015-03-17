@@ -7,7 +7,7 @@
 //
 
 #import "BgLayer.h"
-#import <AVFoundation/AVFoundation.h>
+
 
 @implementation BgLayer
 
@@ -21,30 +21,27 @@
 
 #pragma mark - Set Up Background
 -(void)setUpView {
-    
-    // find movie file
+
     NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"Chasing_Mavericks" ofType:@"mp4"];
-    NSURL *movieURL = [NSURL fileURLWithPath:moviePath];
+    AVAsset *avAsset = [AVAsset assetWithURL:[NSURL fileURLWithPath:moviePath]];
+    AVPlayerItem *avPlayerItem =[[AVPlayerItem alloc]initWithAsset:avAsset];
+    _avPlayer = [[AVPlayer alloc]initWithPlayerItem:avPlayerItem];
+    AVPlayerLayer *avPlayerLayer =[AVPlayerLayer playerLayerWithPlayer:_avPlayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(replayMovie:) name:AVPlayerItemDidPlayToEndTimeNotification object:avPlayerItem];
     
-    // load movie
-    _moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];
-    _moviePlayer.controlStyle = MPMovieControlStyleNone;
-    _moviePlayer.view.frame = self.frame;
-    _moviePlayer.scalingMode = MPMovieScalingModeAspectFill;
-    [self addSubview:self.moviePlayer.view];
-    [self sendSubviewToBack:self.moviePlayer.view];
-    [_moviePlayer play];
-    
-    // loop movie
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(replayMovie:)
-                                                 name: MPMoviePlayerPlaybackDidFinishNotification
-                                               object: self.moviePlayer];
+    [avPlayerLayer setVideoGravity:@"AVLayerVideoGravityResizeAspectFill"];
+    [avPlayerLayer setFrame:self.frame];
+    [self.layer addSublayer:avPlayerLayer];
+    [_avPlayer setMuted:YES];
+
+    [_avPlayer seekToTime:kCMTimeZero];
+    [_avPlayer play];
 }
 
 -(void)replayMovie:(NSNotification *)notification
 {
-    [self.moviePlayer play];
+   [_avPlayer seekToTime:kCMTimeZero];
+    [_avPlayer play];
 }
 
 @end
